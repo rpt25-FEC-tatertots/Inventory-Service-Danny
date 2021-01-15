@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/FEC')
+mongoose.connect('mongodb://localhost/FEC', {useNewUrlParser: true, useUnifiedTopology: true})
   .then(()=>console.log('Connected to FEC'))
   .catch((err)=> console.log(err))
 
@@ -9,6 +9,7 @@ let inventorySchema = mongoose.Schema({
   "colors": [{
     "colorName": String,
     "colorAbbreviation": String,
+    "hexCode": String,
     "inventory": [{
       "size": String,
       "quantity": Number,
@@ -23,7 +24,7 @@ const add = (inventoryData) => {
 }
 const findOne = (productID) => {
   return new Promise((resolve, reject) => {
-    InventoryModel.find({ productID }, (err, document) => {
+    InventoryModel.find({ productID: productID }, (err, document) => {
       if (err) { reject(err) }
       resolve(document);
     })

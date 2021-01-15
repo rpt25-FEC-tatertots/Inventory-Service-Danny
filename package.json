@@ -5,7 +5,7 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "nodemon -r dotenv/config seed.js",
+    "seed": "node -r dotenv/config seed.js",
     "client-dev": "webpack -d --watch",
     "server-dev": "nodemon -r dotenv/config ./server"
   },
@@ -26,6 +26,7 @@
     "@babel/preset-react": "^7.12.10",
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mockaroo": "^0.1.7",
