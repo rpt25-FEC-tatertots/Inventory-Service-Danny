@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
-const thumbnail = (props) => {
+const thumbnail = (props) => (
+  <div></div>);
 
-}
-
-export default thumbnail
+export default thumbnail;
