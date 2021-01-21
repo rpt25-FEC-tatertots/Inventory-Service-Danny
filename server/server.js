@@ -29,18 +29,18 @@ App.get('/inventory/:productID', (req, res) => {
     });
 });
 App.get('/product/:productID', (req, res) => {
-  let info;
-  axios.get(`localhost:6003/photos/${req.params.productID}`)
-    .then((response) => {
-      info = response.data;
-    });
+  let info = {};
+  // axios.get(`localhost:6003/photos/${req.params.productID}`)
+  //   .then((response) => {
+  //     info = response.data;
+  //   });
   db.findOne(req.params.productID)
     .then((items) => {
       if (!items[0]) {
         res.sendStatus(404);
       } else {
         // eslint-disable-next-line prefer-destructuring
-        info[items] = items[0];
+        info.items = items[0];
         res.send(info);
       }
     })
@@ -50,8 +50,6 @@ App.get('/product/:productID', (req, res) => {
     });
 });
 
-const server = App.listen(Port, () => {
+module.exports = App.listen(Port, () => {
   console.log(`App is listening on port ${Port}`);
 });
-
-module.exports = server;
