@@ -10,11 +10,11 @@ const inventorySchema = mongoose.Schema({
   colors: [{
     colorName: String,
     colorAbbreviation: String,
+    discount: Number,
     hexCode: String,
     inventory: [{
       size: String,
       quantity: Number,
-      discount: Number,
     }],
   }],
 });
@@ -23,6 +23,8 @@ const InventoryModel = mongoose.model('Inventory', inventorySchema);
 
 const add = (inventoryData) => InventoryModel.create(inventoryData);
 const findOne = (productID) => InventoryModel.find({ productID });
+const updateOrCreate = (productID, data) => InventoryModel.updateOne({ productID }, { $set: data }, {upsert: true});
 
 module.exports.add = add;
 module.exports.findOne = findOne;
+module.exports.updateOrCreate = updateOrCreate;

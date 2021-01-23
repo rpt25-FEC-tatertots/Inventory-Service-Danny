@@ -6,6 +6,7 @@ const App = express();
 const Port = 6004;
 App.use(express.static('./public/dist'));
 App.use(express.urlencoded({ extended: true }));
+App.use(express.json({}));
 
 App.get('/inventory/:productID', (req, res) => {
   db.findOne(req.params.productID)
@@ -44,6 +45,14 @@ App.get('/product/:productID', (req, res) => {
         res.send(info);
       }
     })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+App.post('/product/:productID', (req, res) => {
+  db.updateOrCreate(req.params.productID, req.body)
+    .then(res.sendStatus(200))
     .catch((err) => {
       console.log(err);
       res.sendStatus(500);
