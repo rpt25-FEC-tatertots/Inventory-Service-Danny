@@ -1,12 +1,16 @@
-const Mockaroo = require('mockaroo')
-const db = require('./database/index.js')
+const Mockaroo = require('mockaroo');
+const db = require('./database/index.js');
+const mockData = require('./test/MockData.js');
+
 const client = new Mockaroo.Client({
-  apiKey: process.env.APIKEY
-})
+  apiKey: process.env.APIKEY,
+});
 
 client.generate({
-  count: 100,
-  schema: 'FEC-InventoryData'
+  count: 97,
+  schema: 'FEC-InventoryData',
 })
-  .then(inventoryData => db.add(inventoryData))
-  .then(console.log('Data insert Complete'))
+  .then((inventoryData) => db.add(inventoryData))
+  .then(console.log('Generated Data insert Complete'));
+
+db.add(mockData).then(console.log('Hard Data Inserted'));
