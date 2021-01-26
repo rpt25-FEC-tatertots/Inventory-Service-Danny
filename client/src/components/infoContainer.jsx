@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-compenents';
+import styled from 'styled-components';
 
 const Name = styled.span`
 font-size: 20px;

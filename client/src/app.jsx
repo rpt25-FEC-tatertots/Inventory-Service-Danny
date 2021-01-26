@@ -35,9 +35,9 @@ class App extends React.Component {
         <GlobalStyle />
         <h2>Inventory Service</h2>
         <InfoContainer color={selectedColor} item={item} />
-        <ThumbnailContainer />
+        <ThumbnailContainer thumbnails={item.thumbnails} />
         <SizingContainer
-          inventory={selectedColor}
+          inventory={selectedColor.inventory}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
