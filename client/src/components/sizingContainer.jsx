@@ -29,7 +29,7 @@ opacity: ${(props) => props.oos ? .4 : 1};
 `;
 const SizingContainer = ({ inventory, onSizeClick, activeSize }) => {
   const sizes = inventory.map((size) => (
-    <SizeWrapper oos={size.quantity > 0 ? false : true}>
+    <SizeWrapper key={size.size} oos={size.quantity > 0 ? false : true}>
       <Size
         key={size.size}
         onClick={(e) => onSizeClick(e)}

@@ -13,21 +13,27 @@ height: 100px;
 width: 100px;
 margin: 3px;
 border-radius: 10px;
-opacity: ${(props) => props.inStock ? 1 : .4};
+opacity: ${(props) => props.outOfStock ? .4 : 1};
 `;
-const thumbnailContainer = ({ thumbnails, onThumbClick, item }) => {
-  const thumbnail = thumbnails.map((url) => (
-    <Image
-      key={url}
-      src={url}
-      alt="thumbnail"
-      onClick={(e) => onThumbClick(e)}
-    />
-  ));
+const thumbnailContainer = ({ onThumbClick, item, activeSize }) => {
+  const thumbnails = item.colors.map((color) => {
+    const outOfStock = color.inventory.filter((sizeObj) => (
+      sizeObj.size === activeSize && sizeObj.quantity === 0
+    ));
+    return (
+      <Image
+        key={color.thumbnail}
+        src={color.thumbnail}
+        alt="thumbnail"
+        onClick={(e) => onThumbClick(e)}
+        outOfStock={outOfStock[0] ? true : false}
+      />
+    );
+  });
 
   return (
     <ImageContainer>
-      {thumbnail}
+      {thumbnails}
     </ImageContainer>
   );
 };

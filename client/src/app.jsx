@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       item: MockData[0],
-      activeColor: 0,
+      activeColor: MockData[0].colors[0],
       activeSize: undefined,
     };
     this.onSizeClick = this.onSizeClick.bind(this);
@@ -28,26 +28,24 @@ class App extends React.Component {
   }
 
   onThumbClick(e) {
-    const index = this.state.item.thumbnails.indexOf(e.target.src);
-    this.setState({ activeColor: index });
+    const color = this.state.item.colors.filter((color) => color.thumbnail === e.target.src);
+    this.setState({ activeColor: color[0] });
   }
 
   render() {
-    // eslint-disable-next-line react/destructuring-assignment
-    const selectedColor = this.state.item.colors[this.state.activeColor];
-    const { item, activeSize } = this.state;
+    const { item, activeSize, activeColor } = this.state;
     return (
       <>
         <GlobalStyle />
         <h2>Inventory Service</h2>
-        <InfoContainer color={selectedColor} item={item} />
+        <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
-          thumbnails={item.thumbnails}
-          onThumbClick={this.onThumbClick}
           item={item}
+          onThumbClick={this.onThumbClick}
+          activeSize={activeSize}
         />
         <SizingContainer
-          inventory={selectedColor.inventory}
+          inventory={activeColor.inventory}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
