@@ -1,14 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const thumbnail = require('./thumbnail.jsx');
-
+const Container = styled.div`
+`;
 const thumbnailContainer = (props) => {
-  const thumbnails = props.thumbnails.map((thumbnail) => (
-    <thumbnail src={props.thumbnail.src}/>
+
+  const thumbnails = props.thumbnails.map((url) => (
+    <img src={url} alt="thumbnail"/>
   )
 
   return (
-    <div>{thumbnails}</div>
+    <Container>
+      {thumbnails}
+    </Container>
   );
 };
 
