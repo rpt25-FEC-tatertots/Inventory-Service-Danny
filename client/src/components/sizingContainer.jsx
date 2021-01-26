@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SizeContainer = styled.div`
+const Container = styled.div`
 width: 100%;
 height: 100px;
 display: flex;
@@ -26,17 +26,16 @@ color: ${(props) => props.active ? 'white' : 'black'};
 const SizingContainer = ({ inventory, onSizeClick, activeSize }) => {
   const sizes = inventory.map((size) => (
     <Size
-      key={size.size}
-      onClick={(e) => onSizeClick(e)}
-      active={size.size === activeSize ? true : false}
+    onClick={(e) => onSizeClick(e)}
+    active={size.size === activeSize ? true : false}
     >
       {size.size}
     </Size>
   ));
   return (
-    <SizeContainer>
+    <Container>
       {sizes}
-    </SizeContainer>
+    </Container>
   );
 };
 
