@@ -15,14 +15,6 @@ class App extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    axios.get('/product/1')
-      .then((response) => {
-        const item = response.data;
-        this.setState({ item });
-      });
-  }
-
   render() {
     return (
       <>
