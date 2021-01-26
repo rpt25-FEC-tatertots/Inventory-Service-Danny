@@ -73,10 +73,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 1,
         },
-        {
-          size: 'XXS',
-          quantity: 3,
-        },
       ],
     },
     {
@@ -112,10 +108,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 0,
-        },
-        {
-          size: 'XXS',
-          quantity: 5,
         },
       ],
     },
@@ -153,10 +145,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 6,
         },
-        {
-          size: 'XXS',
-          quantity: 2,
-        },
       ],
     },
     {
@@ -193,9 +181,40 @@ module.exports = [{
           size: 'XXL',
           quantity: 4,
         },
+      ],
+    }, {
+      colorName: 'Piton Purple',
+      colorAbbreviation: 'PTPL',
+      discount: null,
+      hexCode: '#800080',
+      inventory: [
         {
           size: 'XXS',
+          quantity: 0,
+        },
+        {
+          size: 'XS',
+          quantity: 4,
+        },
+        {
+          size: 'S',
+          quantity: 7,
+        },
+        {
+          size: 'M',
+          quantity: 4,
+        },
+        {
+          size: 'L',
           quantity: 1,
+        },
+        {
+          size: 'XL',
+          quantity: 2,
+        },
+        {
+          size: 'XXL',
+          quantity: 8,
         },
       ],
     },
@@ -234,14 +253,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 9,
         },
-        {
-          size: 'XS',
-          quantity: 8,
-        },
-        {
-          size: 'S',
-          quantity: 3,
-        },
       ],
     },
     {
@@ -273,14 +284,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 4,
-        },
-        {
-          size: 'XS',
-          quantity: 2,
-        },
-        {
-          size: 'S',
-          quantity: 0,
         },
       ],
     },
@@ -314,14 +317,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 8,
         },
-        {
-          size: 'XS',
-          quantity: 6,
-        },
-        {
-          size: 'S',
-          quantity: 4,
-        },
       ],
     },
     {
@@ -354,14 +349,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 5,
         },
-        {
-          size: 'XS',
-          quantity: 2,
-        },
-        {
-          size: 'S',
-          quantity: 1,
-        },
       ],
     },
     {
@@ -393,14 +380,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 1,
-        },
-        {
-          size: 'XS',
-          quantity: 7,
-        },
-        {
-          size: 'S',
-          quantity: 9,
         },
       ],
     },
@@ -443,10 +422,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 2,
         },
-        {
-          size: 'XXS',
-          quantity: 5,
-        },
       ],
     },
     {
@@ -481,10 +456,6 @@ module.exports = [{
         },
         {
           size: 'XXL',
-          quantity: 9,
-        },
-        {
-          size: 'XXS',
           quantity: 9,
         },
       ],
@@ -523,10 +494,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 4,
         },
-        {
-          size: 'XXS',
-          quantity: 1,
-        },
       ],
     },
     {
@@ -561,10 +528,6 @@ module.exports = [{
         },
         {
           size: 'XXL',
-          quantity: 1,
-        },
-        {
-          size: 'XXS',
           quantity: 1,
         },
       ],
@@ -602,10 +565,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 2,
-        },
-        {
-          size: 'XXS',
-          quantity: 3,
         },
       ],
     },

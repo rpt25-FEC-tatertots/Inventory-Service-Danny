@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const SizeContainer = styled.div`
 width: 100%;
 height: 100px;
 display: flex;
@@ -20,22 +20,30 @@ font-weight: 600;
 border-radius: 50%;
 border: solid black;
 border-width: 4px;
+
 background: ${(props)=> props.active ? 'black' : 'white'};
 color: ${(props) => props.active ? 'white' : 'black'};
 `;
+const SizeWrapper = styled.div`
+opacity: ${(props) => props.oos ? .4 : 1};
+`;
 const SizingContainer = ({ inventory, onSizeClick, activeSize }) => {
   const sizes = inventory.map((size) => (
-    <Size
-    onClick={(e) => onSizeClick(e)}
-    active={size.size === activeSize ? true : false}
-    >
-      {size.size}
-    </Size>
+    <SizeWrapper oos={size.quantity > 0 ? false : true}>
+      <Size
+        key={size.size}
+        onClick={(e) => onSizeClick(e)}
+        active={size.size === activeSize ? true : false}
+        oos={size.quantity > 0 ? false : true}
+      >
+        {size.size}
+      </Size>
+      </SizeWrapper>
   ));
   return (
-    <Container>
+    <SizeContainer>
       {sizes}
-    </Container>
+    </SizeContainer>
   );
 };
 
