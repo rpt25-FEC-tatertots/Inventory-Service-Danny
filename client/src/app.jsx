@@ -1,8 +1,10 @@
 import React from 'react';
 import reactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
-
-const axios = require('axios');
+import SizingContainer from './components/sizingContainer.jsx';
+import InfoContainer from './components/infoContainer.jsx';
+import ThumbnailContainer from './components/thumbnailContainer.jsx';
+import MockData from '../../Test/MockData';
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -12,14 +14,33 @@ body{
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      item: MockData[0],
+      selectedIndex: 0,
+      activeSize: undefined,
+    };
+    this.onSizeClick = this.onSizeClick.bind(this);
+  }
+
+  onSizeClick(e) {
+    this.setState({ activeSize: e.target.innerHTML });
   }
 
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
+    const selectedColor = this.state.item.colors[this.state.selectedIndex];
+    const { item, activeSize } = this.state;
     return (
       <>
         <GlobalStyle />
         <h2>Inventory Service</h2>
+        <InfoContainer color={selectedColor} item={item} />
+        <ThumbnailContainer />
+        <SizingContainer
+          inventory={selectedColor}
+          onSizeClick={this.onSizeClick}
+          activeSize={activeSize}
+        />
       </>
     );
   }
