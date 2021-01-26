@@ -1,6 +1,7 @@
 module.exports = [{
   productID: 1,
   price: 139,
+  thumbnails: ['https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbe5ef79d/images/hi-res/22801_ELKH.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6','https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw9b634d4e/images/hi-res/22801_BLK.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6','https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw6b7fd00a/images/hi-res/22801_NENA.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6','https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbc5f5f68/images/hi-res/22801_FEA.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6','https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw55358486/images/hi-res/22801_OAGR.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6', 'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw631e3a2f/images/hi-res/22801_PTPL.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6'],
   colors: [
     {
       colorName: 'El Cap Khaki',
@@ -35,10 +36,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 3,
-        },
-        {
-          size: 'XXS',
-          quantity: 4,
         },
       ],
     },
