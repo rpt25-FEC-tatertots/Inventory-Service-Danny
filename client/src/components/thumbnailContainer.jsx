@@ -1,17 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const ImageContainer = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 100%;
 `;
-const thumbnailContainer = (props) => {
-  const thumbnails = props.thumbnails.map((url) => (
-    <img src={url} alt="thumbnail"/>
+const Image = styled.img`
+height: 100px;
+width: 100px;
+margin: 3px;
+border-radius: 10px;
+`;
+const thumbnailContainer = ({ thumbnails }) => {
+  const thumbnail = thumbnails.map((url) => (
+    <Image key={url} src={url} alt="thumbnail" />
   ));
 
   return (
-    <Container>
-      {thumbnails}
-    </Container>
+    <ImageContainer>
+      {thumbnail}
+    </ImageContainer>
   );
 };
 

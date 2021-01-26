@@ -30,6 +30,7 @@ class App extends React.Component {
     // eslint-disable-next-line react/destructuring-assignment
     const selectedColor = this.state.item.colors[this.state.selectedIndex];
     const { item, activeSize } = this.state;
+    console.log(item.thumbnails);
     return (
       <>
         <GlobalStyle />
