@@ -28,9 +28,4 @@ describe('/product:productID', () => {
     expect(res.status).toBe(200);
     done();
   });
-  it('should return the correct product information', async (done) => {
-    const res = await response(app).get('/product/3');
-    expect(JSON.parse(res.text).items.productID).toBe(3);
-    done();
-  });
 });
