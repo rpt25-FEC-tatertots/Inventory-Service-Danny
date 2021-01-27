@@ -26,7 +26,10 @@ const infoContainer = ({ color, item }) => (
   <InfoWrapper>
     <div>
       <Name>{color.colorName}</Name>
-      <Price>${item.price}</Price>
+      <Price>
+        $
+        {item.price}
+      </Price>
     </div>
     <Abbreviation>
       {color.colorAbbreviation}
