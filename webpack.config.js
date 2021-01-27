@@ -1,12 +1,13 @@
-var path = require('path')
-var webpack = require('webpack')
-var SRC_DIR = path.join(__dirname, './client/src')
+const path = require('path');
+const webpack = require('webpack');
+
+const SRC_DIR = path.join(__dirname, './client/src');
 
 module.exports = {
   entry: `${SRC_DIR}/app.jsx`,
   output: {
     path: path.join(__dirname, './public/dist'),
-    filename: "bundle.js"
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -14,14 +15,11 @@ module.exports = {
         test: /\.jsx?/,
         loader: 'babel-loader',
         include: SRC_DIR,
-        options: {
-          presets: ['@babel/react', '@babel/preset-env']
-        }
       },
       {
         test: /\.css?/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
-  }
-}
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+};

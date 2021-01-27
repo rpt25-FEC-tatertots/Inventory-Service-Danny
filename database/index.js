@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/FEC', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to FEC'))
-  .catch((err) => console.log(err));
-
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect('mongodb://localhost/FEC', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to FEC'))
+    .catch((err) => console.log(err));
+}
 const inventorySchema = mongoose.Schema({
   productID: Number,
   price: Number,
