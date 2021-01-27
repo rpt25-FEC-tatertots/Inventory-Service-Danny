@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const SRC_DIR = path.join(__dirname, './client/src');
 
 module.exports = {
-  entry: `${SRC_DIR}/app.jsx`,
+  entry: `${SRC_DIR}/index.jsx`,
   output: {
     path: path.join(__dirname, './public/dist'),
     filename: 'inventory.js',

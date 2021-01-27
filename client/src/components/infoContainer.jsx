@@ -24,13 +24,11 @@ margin: 10px;
 `;
 const infoContainer = ({ color, item }) => (
   <InfoWrapper>
-    <div>
-      <Name>{color.colorName}</Name>
-      <Price>
-        $
-        {item.price}
-      </Price>
-    </div>
+    <Name>{color.colorName}</Name>
+    <Price>
+      $
+      {item.price}
+    </Price>
     <Abbreviation>
       {color.colorAbbreviation}
       | Style No.

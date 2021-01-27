@@ -1,12 +1,11 @@
 import React from 'react';
-import reactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
-import SizingContainer from './components/sizingContainer.jsx';
-import InfoContainer from './components/infoContainer.jsx';
-import ThumbnailContainer from './components/thumbnailContainer.jsx';
-import MockData from '../../Test/MockData';
-import ButtonContainer from './components/buttonContainer.jsx';
-import Shipping from './components/shipping.jsx';
+import SizingContainer from './sizingContainer.jsx';
+import InfoContainer from './infoContainer.jsx';
+import ThumbnailContainer from './thumbnailContainer.jsx';
+import MockData from '../../../Test/MockData';
+import ButtonContainer from './buttonContainer.jsx';
+import Shipping from './shipping.jsx';
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -60,4 +59,5 @@ class App extends React.Component {
     );
   }
 }
-reactDOM.render(<App />, document.getElementById('app'));
+
+export default App;
