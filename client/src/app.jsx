@@ -5,6 +5,8 @@ import SizingContainer from './components/sizingContainer.jsx';
 import InfoContainer from './components/infoContainer.jsx';
 import ThumbnailContainer from './components/thumbnailContainer.jsx';
 import MockData from '../../Test/MockData';
+import ButtonContainer from './components/buttonContainer.jsx';
+import Shipping from './components/shipping.jsx';
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -49,6 +51,11 @@ class App extends React.Component {
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
+        <div>
+          <span>Regular Fit | Size and Fit Guide</span>
+        </div>
+        <ButtonContainer />
+        <Shipping />
       </>
     );
   }
