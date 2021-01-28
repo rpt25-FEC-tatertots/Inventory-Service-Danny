@@ -9,6 +9,7 @@ import Shipping from './shipping.jsx';
 
 const GlobalStyle = createGlobalStyle`
 body{
+  box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
 }`;
 
@@ -37,13 +38,14 @@ class App extends React.Component {
     const { item, activeSize, activeColor } = this.state;
     return (
       <>
-        <GlobalStyle />
+      <GlobalStyle />
         <h2>Inventory Service</h2>
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
           item={item}
           onThumbClick={this.onThumbClick}
           activeSize={activeSize}
+          activeColor={activeColor}
         />
         <SizingContainer
           inventory={activeColor.inventory}
@@ -55,7 +57,7 @@ class App extends React.Component {
         </div>
         <ButtonContainer />
         <Shipping />
-      </>
+    </>
     );
   }
 }
