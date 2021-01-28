@@ -5,6 +5,7 @@ module.exports = [{
     {
       colorName: 'El Cap Khaki',
       colorAbbreviation: 'ELKH',
+      thumbnail: 'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbe5ef79d/images/hi-res/22801_ELKH.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6',
       discount: null,
       hexCode: '#a5e766',
       inventory: [
@@ -36,15 +37,12 @@ module.exports = [{
           size: 'XXL',
           quantity: 3,
         },
-        {
-          size: 'XXS',
-          quantity: 4,
-        },
       ],
     },
     {
       colorName: 'Black',
       colorAbbreviation: 'BLK',
+      thumbnail: 'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw9b634d4e/images/hi-res/22801_BLK.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6',
       discount: null,
       hexCode: '#49d27b',
       inventory: [
@@ -76,15 +74,12 @@ module.exports = [{
           size: 'XXL',
           quantity: 1,
         },
-        {
-          size: 'XXS',
-          quantity: 3,
-        },
       ],
     },
     {
       colorName: 'New Navy',
       colorAbbreviation: 'NENA',
+      thumbnail: 'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw6b7fd00a/images/hi-res/22801_NENA.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6',
       discount: null,
       hexCode: '#5bd758',
       inventory: [
@@ -116,15 +111,12 @@ module.exports = [{
           size: 'XXL',
           quantity: 0,
         },
-        {
-          size: 'XXS',
-          quantity: 5,
-        },
       ],
     },
     {
       colorName: 'Feather Grey',
       colorAbbreviation: 'FEA',
+      thumbnail: 'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbc5f5f68/images/hi-res/22801_FEA.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6',
       discount: null,
       hexCode: '#38c03f',
       inventory: [
@@ -156,15 +148,12 @@ module.exports = [{
           size: 'XXL',
           quantity: 6,
         },
-        {
-          size: 'XXS',
-          quantity: 2,
-        },
       ],
     },
     {
       colorName: 'Oak Grove Green',
       colorAbbreviation: 'OAGR',
+      thumbnail: 'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw55358486/images/hi-res/22801_OAGR.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6',
       discount: null,
       hexCode: '#bc594f',
       inventory: [
@@ -196,9 +185,41 @@ module.exports = [{
           size: 'XXL',
           quantity: 4,
         },
+      ],
+    }, {
+      colorName: 'Piton Purple',
+      colorAbbreviation: 'PTPL',
+      thumbnail:'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw631e3a2f/images/hi-res/22801_PTPL.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6',
+      discount: null,
+      hexCode: '#800080',
+      inventory: [
         {
           size: 'XXS',
+          quantity: 0,
+        },
+        {
+          size: 'XS',
+          quantity: 4,
+        },
+        {
+          size: 'S',
+          quantity: 7,
+        },
+        {
+          size: 'M',
+          quantity: 4,
+        },
+        {
+          size: 'L',
           quantity: 1,
+        },
+        {
+          size: 'XL',
+          quantity: 2,
+        },
+        {
+          size: 'XXL',
+          quantity: 8,
         },
       ],
     },
@@ -237,14 +258,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 9,
         },
-        {
-          size: 'XS',
-          quantity: 8,
-        },
-        {
-          size: 'S',
-          quantity: 3,
-        },
       ],
     },
     {
@@ -276,14 +289,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 4,
-        },
-        {
-          size: 'XS',
-          quantity: 2,
-        },
-        {
-          size: 'S',
-          quantity: 0,
         },
       ],
     },
@@ -317,14 +322,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 8,
         },
-        {
-          size: 'XS',
-          quantity: 6,
-        },
-        {
-          size: 'S',
-          quantity: 4,
-        },
       ],
     },
     {
@@ -357,14 +354,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 5,
         },
-        {
-          size: 'XS',
-          quantity: 2,
-        },
-        {
-          size: 'S',
-          quantity: 1,
-        },
       ],
     },
     {
@@ -396,14 +385,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 1,
-        },
-        {
-          size: 'XS',
-          quantity: 7,
-        },
-        {
-          size: 'S',
-          quantity: 9,
         },
       ],
     },
@@ -446,10 +427,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 2,
         },
-        {
-          size: 'XXS',
-          quantity: 5,
-        },
       ],
     },
     {
@@ -484,10 +461,6 @@ module.exports = [{
         },
         {
           size: 'XXL',
-          quantity: 9,
-        },
-        {
-          size: 'XXS',
           quantity: 9,
         },
       ],
@@ -526,10 +499,6 @@ module.exports = [{
           size: 'XXL',
           quantity: 4,
         },
-        {
-          size: 'XXS',
-          quantity: 1,
-        },
       ],
     },
     {
@@ -564,10 +533,6 @@ module.exports = [{
         },
         {
           size: 'XXL',
-          quantity: 1,
-        },
-        {
-          size: 'XXS',
           quantity: 1,
         },
       ],
@@ -605,10 +570,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 2,
-        },
-        {
-          size: 'XXS',
-          quantity: 3,
         },
       ],
     },
