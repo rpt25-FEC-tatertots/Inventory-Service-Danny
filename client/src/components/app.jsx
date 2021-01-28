@@ -4,12 +4,13 @@ import SizingContainer from './sizingContainer';
 import InfoContainer from './infoContainer';
 import ThumbnailContainer from './thumbnailContainer';
 import MockData from '../../../Test/MockData';
+import FitGuide from './fitGuide.jsx';
 import ButtonContainer from './buttonContainer';
 import Shipping from './shipping';
 
 const GlobalStyle = createGlobalStyle`
 body{
-  box-sizing: border-box;
+
   font-family: 'Nunito', sans-serif;
 }`;
 
@@ -46,14 +47,12 @@ class App extends React.Component {
           activeSize={activeSize}
           activeColor={activeColor}
         />
-        <SizingContainer
+        {/* <SizingContainer
           inventory={activeColor.inventory}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
-        <div>
-          <span>Regular Fit | Size and Fit Guide</span>
-        </div>
+        <FitGuide fit={'Regular'} />
         <ButtonContainer
           buy={activeColor.inventory[activeSize] === 0 ? 'Out of Stock' : 'Buy'}
         />

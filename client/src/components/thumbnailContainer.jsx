@@ -2,23 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageContainer = styled.div`
+overflow: visible;
 display: flex;
 flex-direction: row;
-flex-wrap: no-wrap;
+flex-shrink: 0;
+flex-wrap: wrap;
 justify-content: center;
 align-items: center;
-width: 100%;
+padding: 0 4rem;
+max-width: 90rem;
+@media (max-width: 575px) {
+  padding-right: 40px;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
+  padding-left: 20px;
+}
 `;
-const ImageWrap = styled.div`
+const ImageWrapper = styled.div`
 position: relative;
-width: 100px;
-height: 100px;
+background: blue;
+flex-basis: 12.5%;
 margin: 1px;
+@media (max-width: 575px) {
+  flex-basis: 33.3333%;
+}
 `;
 const Image = styled.img`
 position: absolute;
-height: 100px;
-width: 100px;
+flex-basis: 100px;
 border-radius: 10px;
 opacity: ${(props) => props.outOfStock ? .3 : 1};
 `;
@@ -38,7 +49,7 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
     return (
-      <ImageWrap key={color.thumbnail}>
+      <ImageWrapper key={color.thumbnail}>
         <Image
           src={color.thumbnail}
           alt="thumbnail"
@@ -46,7 +57,7 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
           outOfStock={outOfStock[0] ? true : false}
         />
         <SvgContainer hidden={activeColor === color ? false : true} />
-      </ImageWrap>
+      </ImageWrapper>
     );
   });
 

@@ -4,7 +4,7 @@ import Popup from 'reactjs-popup';
 
 const SizeContainer = styled.div`
 width: 100%;
-height: 100px;
+padding 1.6rem 0 0 4rem;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -57,8 +57,8 @@ const SizingContainer = ({ inventory, onSizeClick, activeSize }) => {
   const sizes = inventory.map((size) => (
     <Popup
       key={size.size}
-      on={'hover'}
-      trigger={
+      on="hover"
+      trigger={(
         <Size
           key={size.size}
           onClick={(e) => onSizeClick(e)}
@@ -66,9 +66,15 @@ const SizingContainer = ({ inventory, onSizeClick, activeSize }) => {
           oos={!(size.quantity > 0)}
         >
           {size.size}
-        </Size>}
+        </Size>
+      )}
     >
-      {!(size.quantity > 0) ? <StyledSpan>Out of stock <StyledA href=''>Notify Me</StyledA></StyledSpan> : null}
+      {!(size.quantity > 0) ? (
+        <StyledSpan>
+          Out of stock
+          <StyledA href="">Notify Me</StyledA>
+        </StyledSpan>
+      ) : null}
     </Popup>
   ));
   return (
