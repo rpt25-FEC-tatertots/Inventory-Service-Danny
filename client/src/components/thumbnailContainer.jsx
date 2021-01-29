@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageContainer = styled.div`
-overflow: visible;
 display: flex;
 flex-direction: row;
 flex-shrink: 0;
@@ -22,16 +21,19 @@ const ImageWrapper = styled.div`
 position: relative;
 background: blue;
 flex-basis: 12.5%;
-margin: 1px;
+padding: .4rem;
 @media (max-width: 575px) {
   flex-basis: 33.3333%;
 }
 `;
 const Image = styled.img`
 position: absolute;
-flex-basis: 100px;
+width: 100%;
 border-radius: 10px;
 opacity: ${(props) => props.outOfStock ? .3 : 1};
+@media (min-width: 972px) {
+  width: 75%
+})
 `;
 const SvgContainer = styled.div`
 position: absolute;
