@@ -39,7 +39,6 @@ class App extends React.Component {
     return (
       <>
       <GlobalStyle />
-        <h2>Inventory Service</h2>
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
           item={item}
