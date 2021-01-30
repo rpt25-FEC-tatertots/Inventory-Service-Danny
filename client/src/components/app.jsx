@@ -4,9 +4,9 @@ import SizingContainer from './sizingContainer';
 import InfoContainer from './infoContainer';
 import ThumbnailContainer from './thumbnailContainer';
 import MockData from '../../../Test/MockData';
-import FitGuide from './fitGuide.jsx';
 import ButtonContainer from './buttonContainer';
 import Shipping from './shipping';
+import FitGuide from './fitGuide';
 
 const GlobalStyle = createGlobalStyle`
 body{
