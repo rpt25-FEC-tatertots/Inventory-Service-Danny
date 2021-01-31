@@ -1,11 +1,11 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import SizingContainer from './sizingContainer.jsx';
-import InfoContainer from './infoContainer.jsx';
-import ThumbnailContainer from './thumbnailContainer.jsx';
+import SizingContainer from './sizingContainer';
+import InfoContainer from './infoContainer';
+import ThumbnailContainer from './thumbnailContainer';
 import MockData from '../../../Test/MockData';
-import ButtonContainer from './buttonContainer.jsx';
-import Shipping from './shipping.jsx';
+import ButtonContainer from './buttonContainer';
+import Shipping from './shipping';
 
 const GlobalStyle = createGlobalStyle`
 body{
