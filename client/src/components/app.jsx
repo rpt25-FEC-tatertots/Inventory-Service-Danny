@@ -54,7 +54,9 @@ class App extends React.Component {
         <div>
           <span>Regular Fit | Size and Fit Guide</span>
         </div>
-        <ButtonContainer />
+        <ButtonContainer
+          buy={activeColor.inventory[activeSize] === 0 ? 'Out of Stock' : 'Buy'}
+        />
         <Shipping />
     </>
     );
