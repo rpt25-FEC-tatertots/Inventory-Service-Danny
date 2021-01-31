@@ -16,6 +16,7 @@ App.get('/inventory/:productID', (req, res) => {
         const response = {
           productID: items[0].productID,
           colors: {},
+          price: items[0].price,
         };
         items[0].colors.forEach((color) => {
           response.colors[color.colorName] = color.hexCode;
