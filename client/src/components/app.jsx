@@ -39,7 +39,7 @@ class App extends React.Component {
     const { item, activeSize, activeColor } = this.state;
     return (
       <>
-      <GlobalStyle />
+        <GlobalStyle />
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
           item={item}
@@ -47,17 +47,17 @@ class App extends React.Component {
           activeSize={activeSize}
           activeColor={activeColor}
         />
-        {/* <SizingContainer
+        <SizingContainer
           inventory={activeColor.inventory}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
-        <FitGuide fit={'Regular'} />
+        <FitGuide fit="Regular" />
         <ButtonContainer
           buy={activeColor.inventory[activeSize] === 0 ? 'Out of Stock' : 'Buy'}
         />
         <Shipping />
-    </>
+      </>
     );
   }
 }

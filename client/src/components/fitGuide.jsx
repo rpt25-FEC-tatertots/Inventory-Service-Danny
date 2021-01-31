@@ -11,10 +11,10 @@ align-items: center;
 font-size: 14px;
 font-weight: bold;
 `;
-const FitGuide = (props) => (
+const FitGuide = ({ fit }) => (
   <StyledDiv>
     <Popup
-      trigger={<div>{`${props.fit} Fit | Size and Fit Style Guide`}</div>}
+      trigger={<div>{`${fit} Fit | Size and Fit Style Guide`}</div>}
       modal
       nested
     >
