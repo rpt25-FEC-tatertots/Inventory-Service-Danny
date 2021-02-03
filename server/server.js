@@ -4,8 +4,6 @@ const db = require('../database/index.js');
 const App = express();
 
 App.use(express.static('./public/dist'));
-App.use(express.urlencoded({ extended: true }));
-App.use(express.json({}));
 
 App.get('/inventory/:productID', (req, res) => {
   db.findOne(req.params.productID)

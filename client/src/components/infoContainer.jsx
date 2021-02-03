@@ -59,7 +59,7 @@ const infoContainer = ({ color, item }) => {
         <Div>
           <Name>{color.colorName}</Name>
           <Price>
-            {`$${item.price}`}
+            {`$${item.price} ${dimensions.width}`}
           </Price>
         </Div>
         <Abbreviation>
@@ -74,7 +74,7 @@ const infoContainer = ({ color, item }) => {
             {`${color.colorAbbreviation}  |Style No. ${item.productID}`}
           </Abbreviation>
           <Price>
-            {`$${item.price}`}
+            {`$${item.price} ${dimensions.width}`}
           </Price>
         </Wrap>
       </InfoWrapper>

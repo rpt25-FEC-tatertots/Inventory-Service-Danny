@@ -6,10 +6,11 @@ import ThumbnailContainer from './thumbnailContainer';
 import MockData from '../../../Test/MockData';
 import ButtonContainer from './buttonContainer';
 import Shipping from './shipping';
+import FitGuide from './fitGuide';
 
 const GlobalStyle = createGlobalStyle`
 body{
-  box-sizing: border-box;
+
   font-family: 'Nunito', sans-serif;
 }`;
 
@@ -38,7 +39,7 @@ class App extends React.Component {
     const { item, activeSize, activeColor } = this.state;
     return (
       <>
-      <GlobalStyle />
+        <GlobalStyle />
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
           item={item}
@@ -51,14 +52,12 @@ class App extends React.Component {
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
-        <div>
-          <span>Regular Fit | Size and Fit Guide</span>
-        </div>
+        <FitGuide fit="Regular" />
         <ButtonContainer
           buy={activeColor.inventory[activeSize] === 0 ? 'Out of Stock' : 'Buy'}
         />
         <Shipping />
-    </>
+      </>
     );
   }
 }
