@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import SizingContainer from './sizingContainer';
@@ -24,6 +25,10 @@ class App extends React.Component {
     };
     this.onSizeClick = this.onSizeClick.bind(this);
     this.onThumbClick = this.onThumbClick.bind(this);
+    axios.get(`/product${window.location.pathname}`)
+      .then((response) => {
+        this.setState({ item: response.data, activeColor: response.data.colors[0] });
+      });
   }
 
   onSizeClick(e) {
