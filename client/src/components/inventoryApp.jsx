@@ -4,7 +4,6 @@ import { createGlobalStyle } from 'styled-components';
 import SizingContainer from './sizingContainer';
 import InfoContainer from './infoContainer';
 import ThumbnailContainer from './thumbnailContainer';
-import MockData from '../../../Test/MockData';
 import ButtonContainer from './buttonContainer';
 import Shipping from './shipping';
 import FitGuide from './fitGuide';
@@ -19,8 +18,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: MockData[0],
-      activeColor: MockData[0].colors[0],
+      item: { colors: [{ inventory: [] }] },
+      activeColor: { inventory: [] },
       activeSize: undefined,
     };
     this.onSizeClick = this.onSizeClick.bind(this);
@@ -31,8 +30,8 @@ class App extends React.Component {
         axios.get(`http://localhost:5003/images/thumbnailImages${window.location.pathname}`)
           .then((res) => {
             res.data.thumbnailImages.forEach((url, i) => item.colors[i].thumbnail = url);
+            this.setState({ item, activeColor: item.colors[0] });
           });
-        this.setState({ item, activeColor: item.colors[0] });
       })
       .catch((err) => console.log(err));
   }
@@ -48,7 +47,8 @@ class App extends React.Component {
 
   render() {
     const { item, activeSize, activeColor } = this.state;
-    const outOfStock = activeColor.inventory.filter(size => size.size === activeSize && size.quantity === 0)[0]
+    const outOfStock = activeColor.inventory.filter((size) => (
+      size.size === activeSize && size.quantity === 0))[0];
     return (
       <>
 

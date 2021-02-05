@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 const ImageContainer = styled.div`
 display: flex;
