@@ -1,4 +1,4 @@
-const server = require('./server.js');
+const App = require('./server.js');
 
 // eslint-disable-next-line no-unused-expressions
-server;
+App.listen(process.env.PORT, () => console.log(`Server is listening on port ${process.env.PORT}`));

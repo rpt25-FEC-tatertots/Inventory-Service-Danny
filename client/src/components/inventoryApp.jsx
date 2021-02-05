@@ -1,15 +1,17 @@
+import axios from 'axios';
 import React from 'react';
-import reactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
-import SizingContainer from './components/sizingContainer.jsx';
-import InfoContainer from './components/infoContainer.jsx';
-import ThumbnailContainer from './components/thumbnailContainer.jsx';
-import MockData from '../../Test/MockData';
-import ButtonContainer from './components/buttonContainer.jsx';
-import Shipping from './components/shipping.jsx';
+import SizingContainer from './sizingContainer';
+import InfoContainer from './infoContainer';
+import ThumbnailContainer from './thumbnailContainer';
+import MockData from '../../../Test/MockData';
+import ButtonContainer from './buttonContainer';
+import Shipping from './shipping';
+import FitGuide from './fitGuide';
 
 const GlobalStyle = createGlobalStyle`
 body{
+
   font-family: 'Nunito', sans-serif;
 }`;
 
@@ -23,6 +25,10 @@ class App extends React.Component {
     };
     this.onSizeClick = this.onSizeClick.bind(this);
     this.onThumbClick = this.onThumbClick.bind(this);
+    axios.get(`/product${window.location.pathname}`)
+      .then((response) => {
+        this.setState({ item: response.data, activeColor: response.data.colors[0] });
+      });
   }
 
   onSizeClick(e) {
@@ -39,25 +45,26 @@ class App extends React.Component {
     return (
       <>
         <GlobalStyle />
-        <h2>Inventory Service</h2>
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
           item={item}
           onThumbClick={this.onThumbClick}
           activeSize={activeSize}
+          activeColor={activeColor}
         />
         <SizingContainer
           inventory={activeColor.inventory}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
-        <div>
-          <span>Regular Fit | Size and Fit Guide</span>
-        </div>
-        <ButtonContainer />
+        <FitGuide fit="Regular" />
+        <ButtonContainer
+          buy={activeColor.inventory[activeSize] === 0 ? 'Out of Stock' : 'Buy'}
+        />
         <Shipping />
       </>
     );
   }
 }
-reactDOM.render(<App />, document.getElementById('app'));
+
+export default App;
