@@ -28,7 +28,7 @@ class App extends React.Component {
     this.onThumbClick = this.onThumbClick.bind(this);
     axios.get(`/product${window.location.pathname}`)
       .then((response) => {
-        this.setState({ item: response.data, activeColor: response.data.colors[0] });
+        this.setState({ item: response.data[0], activeColor: response.data[0].colors[0] });
       });
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+
 const ImageContainer = styled.div`
 display: flex;
 flex-direction: row;
@@ -39,7 +40,7 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
     ));
     return (
       <Link to={`${color.colorName}`} key={color.thumbnail}>
-        <ImageWrap >
+        <ImageWrap>
           <Image
             src={color.thumbnail}
             alt="thumbnail"
