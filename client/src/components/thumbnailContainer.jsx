@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 const ImageContainer = styled.div`
 display: flex;
 flex-direction: row;
@@ -38,22 +38,26 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
     return (
-      <ImageWrap key={color.thumbnail}>
-        <Image
-          src={color.thumbnail}
-          alt="thumbnail"
-          onClick={(e) => onThumbClick(e)}
-          outOfStock={outOfStock[0] ? true : false}
-        />
-        <SvgContainer hidden={activeColor === color ? false : true} />
-      </ImageWrap>
+      <Link to={`${color.colorName}`} key={color.thumbnail}>
+        <ImageWrap >
+          <Image
+            src={color.thumbnail}
+            alt="thumbnail"
+            onClick={(e) => onThumbClick(e)}
+            outOfStock={outOfStock[0] ? true : false}
+          />
+          <SvgContainer hidden={activeColor === color ? false : true} />
+        </ImageWrap>
+      </Link>
     );
   });
 
   return (
-    <ImageContainer>
-      {thumbnails}
-    </ImageContainer>
+    <Router>
+      <ImageContainer>
+        {thumbnails}
+      </ImageContainer>
+    </Router>
   );
 };
 

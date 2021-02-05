@@ -8,6 +8,7 @@ import MockData from '../../../Test/MockData';
 import ButtonContainer from './buttonContainer';
 import Shipping from './shipping';
 import FitGuide from './fitGuide';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -44,6 +45,7 @@ class App extends React.Component {
     const { item, activeSize, activeColor } = this.state;
     return (
       <>
+
         <GlobalStyle />
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
@@ -51,16 +53,16 @@ class App extends React.Component {
           onThumbClick={this.onThumbClick}
           activeSize={activeSize}
           activeColor={activeColor}
-        />
+          />
         <SizingContainer
           inventory={activeColor.inventory}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
-        />
+          />
         <FitGuide fit="Regular" />
         <ButtonContainer
           buy={activeColor.inventory[activeSize] === 0 ? 'Out of Stock' : 'Buy'}
-        />
+          />
         <Shipping />
       </>
     );
