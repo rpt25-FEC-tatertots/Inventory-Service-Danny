@@ -1,10 +1,12 @@
+const axios = require('axios');
 const express = require('express');
 const db = require('../database/index.js');
+const cors = require('cors');
 
 const App = express();
 
 App.use('/:productId', express.static('./public/dist'));
-
+App.use(cors());
 App.get('/inventory/:productID', (req, res) => {
   db.findOne(req.params.productID)
     .then((items) => {
@@ -33,7 +35,12 @@ App.get('/product/:productID', (req, res) => {
       if (!items[0]) {
         res.sendStatus(404);
       } else {
-        res.send(items);
+        // axios.get(`http://localhost:5003/images/thumbnailImages/${req.params.productID}`)
+        //   .then(response => {
+        //     response.data.thumbnailImages.forEach((url,i) => items[0].colors[i]['thumbnail'] = url);
+        //     console.log(items[0]);
+        //   });
+        res.send(items[0]);
       }
     })
     .catch((err) => {

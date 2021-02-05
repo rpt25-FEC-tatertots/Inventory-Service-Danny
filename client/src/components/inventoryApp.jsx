@@ -28,7 +28,14 @@ class App extends React.Component {
     this.onThumbClick = this.onThumbClick.bind(this);
     axios.get(`/product${window.location.pathname}`)
       .then((response) => {
-        this.setState({ item: response.data[0], activeColor: response.data[0].colors[0] });
+        const item = response.data;
+        axios.get(`http://localhost:5003/images/thumbnailImages${window.location.pathname}`)
+          .then((res) => {
+            console.log(res.data);
+            res.data.thumbnailImages.forEach((url, i) => item.colors[i].thumbnail = url);
+            console.log(item);
+          });
+        this.setState({ item, activeColor: item.colors[0] });
       });
   }
 
