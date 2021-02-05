@@ -35,11 +35,6 @@ App.get('/product/:productID', (req, res) => {
       if (!items[0]) {
         res.sendStatus(404);
       } else {
-        // axios.get(`http://localhost:5003/images/thumbnailImages/${req.params.productID}`)
-        //   .then(response => {
-        //     response.data.thumbnailImages.forEach((url,i) => items[0].colors[i]['thumbnail'] = url);
-        //     console.log(items[0]);
-        //   });
         res.send(items[0]);
       }
     })

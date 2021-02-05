@@ -39,7 +39,7 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
     return (
-      <Link to={`${color.colorName}`} key={color.thumbnail}>
+      <Link to={`${color.colorName}`} key={color.colorName}>
         <ImageWrap>
           <Image
             src={color.thumbnail}
