@@ -48,7 +48,7 @@ class App extends React.Component {
 
   render() {
     const { item, activeSize, activeColor } = this.state;
-    // return (<div>Hello World</div>);
+    const outOfStock = activeColor.inventory.filter(size => size.size === activeSize && size.quantity === 0)[0]
     return (
       <>
 
@@ -67,7 +67,7 @@ class App extends React.Component {
         />
         <FitGuide fit="Regular" />
         <ButtonContainer
-          buy={activeColor.inventory[activeSize] === 0 ? 'Out of Stock' : 'Buy'}
+          buy={outOfStock ? 'Out of Stock' : 'Add to Bag'}
         />
         <Shipping />
       </>

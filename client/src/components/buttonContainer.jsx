@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.div`
-padding: .4rem;
+padding: .9rem;
 font-weight: 700;
 border-style: solid;
 border-color: black
@@ -17,7 +17,8 @@ transition: transform .4s ease;
 }
 `;
 const BuyButton = styled.div`
-padding: .4rem;
+padding: 1rem;
+font-weight: 500;
 border-color: ${({ buy }) => buy === 'Buy' ? 'black' : '#fa4616'};
 cursor: pointer;
 border-radius: 30px;
