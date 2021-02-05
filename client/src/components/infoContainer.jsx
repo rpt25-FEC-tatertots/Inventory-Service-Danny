@@ -53,13 +53,20 @@ const infoContainer = ({ color, item }) => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   });
+  const price = color.discount ? (
+    <strike>
+      $
+      {item.price}
+    </strike>
+  ) : `$${item.price}`;
   return (dimensions.width > 767
     ? (
       <InfoWrapper>
         <Div>
           <Name>{color.colorName}</Name>
           <Price>
-            {`$${item.price}`}
+            {price}
+            {color.discount ? ` ${(color.discount * item.price).toFixed(2)}` : ''}
           </Price>
         </Div>
         <Abbreviation>
@@ -74,7 +81,8 @@ const infoContainer = ({ color, item }) => {
             {`${color.colorAbbreviation}  |Style No. ${item.productID}`}
           </Abbreviation>
           <Price>
-            {`$${item.price}`}
+            {price}
+            {color.discount ? ` ${(color.discount * item.price).toFixed(2)}` : ''}
           </Price>
         </Wrap>
       </InfoWrapper>

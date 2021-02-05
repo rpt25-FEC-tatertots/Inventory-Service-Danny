@@ -27,6 +27,8 @@ const findOne = (productID) => InventoryModel.find({ productID });
 const updateOrCreate = (productID, data) => {
   InventoryModel.updateOne({ productID }, { $set: data }, { upsert: true });
 };
+const dropCollection = () => InventoryModel.collection.drop();
 module.exports.add = add;
 module.exports.findOne = findOne;
 module.exports.updateOrCreate = updateOrCreate;
+module.exports.dropCollection = dropCollection;
