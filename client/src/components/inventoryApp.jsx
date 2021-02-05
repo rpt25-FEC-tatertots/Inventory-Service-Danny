@@ -31,9 +31,7 @@ class App extends React.Component {
         const item = response.data;
         axios.get(`http://localhost:5003/images/thumbnailImages${window.location.pathname}`)
           .then((res) => {
-            console.log(res.data);
             res.data.thumbnailImages.forEach((url, i) => item.colors[i].thumbnail = url);
-            console.log(item);
           });
         this.setState({ item, activeColor: item.colors[0] });
       });
