@@ -5,8 +5,9 @@ const cors = require('cors');
 
 const App = express();
 
-App.use('/:productId', express.static('./public/dist'));
 App.use(cors());
+App.use(express.static('./public/dist'));
+App.use('/:productId', express.static('./public/dist'));
 App.get('/inventory/:productID', (req, res) => {
   db.findOne(req.params.productID)
     .then((items) => {

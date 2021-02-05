@@ -14,7 +14,7 @@ font-weight: bold;
 const FitGuide = ({ fit }) => (
   <StyledDiv>
     <Popup
-      trigger={<div>{`${fit} Fit | Size and Fit Style Guide`}</div>}
+      trigger={<div id="guide">{`${fit} Fit | Size and Fit Style Guide`}</div>}
       modal
       nested
     >
