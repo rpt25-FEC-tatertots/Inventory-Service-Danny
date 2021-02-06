@@ -10,11 +10,10 @@ import FitGuide from './fitGuide';
 
 const GlobalStyle = createGlobalStyle`
 body{
-
   font-family: 'Nunito', sans-serif;
 }`;
 
-class App extends React.Component {
+class InventoryApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,4 +76,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default InventoryApp;

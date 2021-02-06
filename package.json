@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "> Project description",
   "jest": {
-    "testEnvironment": "node",
+    "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
       "<rootDir>client/src/setupTests.js"
     ]

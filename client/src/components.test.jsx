@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import App from './components/app';
+import InventoryService from './components/inventoryService';
 import InfoContainer from './components/infoContainer';
 import ButtonContainer from './components/buttonContainer';
 import SizingContainer from './components/sizingContainer';

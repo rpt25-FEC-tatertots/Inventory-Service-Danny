@@ -42,12 +42,12 @@ align-items: center;
 `;
 const ButtonContainer = ({ buy }) => (
   <WrapperWrapper>
-  <ButtonWrapper>
-    <BuyButton id="buy">{buy}</BuyButton>
-  </ButtonWrapper>
-  <ButtonWrapper>
-    <Button>Browse Used Fleece</Button>
-  </ButtonWrapper>
+    <ButtonWrapper>
+      <BuyButton id="buy">{buy}</BuyButton>
+    </ButtonWrapper>
+    <ButtonWrapper>
+      <Button>Browse Used Fleece</Button>
+    </ButtonWrapper>
   </WrapperWrapper>
 );
 
