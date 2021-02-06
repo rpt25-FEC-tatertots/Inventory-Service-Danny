@@ -33,9 +33,9 @@ class InventoryApp extends React.Component {
     this.setState({ activeSize: e.target.innerHTML });
   }
 
-  onThumbClick(e) {
-    const color = this.state.item.colors.filter((color) => color.thumbnail === e.target.src);
-    this.setState({ activeColor: color[0] });
+  onThumbClick(colorName) {
+    const activeColor = this.state.item.colors.filter((color) => color.colorName === colorName);
+    this.setState({ activeColor: activeColor[0] });
   }
 
   render() {

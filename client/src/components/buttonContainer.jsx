@@ -23,7 +23,7 @@ cursor: pointer;
 border-radius: 30px;
 background-color: ${({ buy }) => buy === 'Out of Stock' ? 'black' : '#fa4616'};
 color: white;
-transition: transform .4s ease;
+transition: transform .4s ease, background-color .4s ease;
 :hover {
   transform: scale(1.05);
 }

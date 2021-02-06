@@ -43,8 +43,9 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
         <ImageWrap>
           <Image
             src={color.thumbnail}
+            color={color.colorName}
             alt="thumbnail"
-            onClick={(e) => onThumbClick(e)}
+            onClick={(e) => onThumbClick(e.target.attributes.color.value)}
             outOfStock={outOfStock[0] ? true : false}
           />
           <SvgContainer hidden={activeColor === color ? false : true} />
