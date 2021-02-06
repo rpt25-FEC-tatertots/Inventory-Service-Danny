@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import fetchData from '../utils/fetchData';
 import { createGlobalStyle } from 'styled-components';
 import SizingContainer from './sizingContainer';
 import InfoContainer from './infoContainer';
@@ -23,17 +24,8 @@ class InventoryApp extends React.Component {
     };
     this.onSizeClick = this.onSizeClick.bind(this);
     this.onThumbClick = this.onThumbClick.bind(this);
-    axios.get(`/product${window.location.pathname}`)
-      .then((response) => {
-        const item = response.data;
-        axios.get(`http://localhost:5003/images/thumbnailImages${window.location.pathname}`)
-          .then((res) => {
-            res.data.thumbnailImages.forEach((url, i) => {
-              if (item.colors[i]) { item.colors[i].thumbnail = url; }
-            });
-            this.setState({ item, activeColor: item.colors[0] });
-          });
-      })
+    fetchData(`/product${window.location.pathname}`, `http://localhost:5003/images/thumbnailImages${window.location.pathname}`)
+      .then((item) => this.setState({ item, activeColor: item.colors[0] }))
       .catch((err) => console.log(err));
   }
 
