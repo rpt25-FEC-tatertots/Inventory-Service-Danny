@@ -19,10 +19,9 @@ transition: transform .4s ease;
 const BuyButton = styled.div`
 padding: 1rem;
 font-weight: 500;
-border-color: ${({ buy }) => buy === 'Buy' ? 'black' : '#fa4616'};
 cursor: pointer;
 border-radius: 30px;
-background-color: ${({ buy }) => buy === 'Buy' ? 'black' : '#fa4616'};
+background-color: ${({ buy }) => buy === 'Out of Stock' ? 'black' : '#fa4616'};
 color: white;
 transition: transform .4s ease;
 :hover {
@@ -43,7 +42,7 @@ align-items: center;
 const ButtonContainer = ({ buy }) => (
   <WrapperWrapper>
     <ButtonWrapper>
-      <BuyButton id="buy">{buy}</BuyButton>
+      <BuyButton id="buy" buy={buy}>{buy}</BuyButton>
     </ButtonWrapper>
     <ButtonWrapper>
       <Button>Browse Used Fleece</Button>
