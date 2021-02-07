@@ -2,28 +2,52 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.div`
-padding: .4rem 2rem;
+padding: .9rem;
+font-weight: 700;
+border-style: solid;
+border-color: black
+border-width: 4px;
 cursor: pointer;
-border-radius: 15px;
-background-color: ${({ buy }) => buy === 'Buy' ? 'black' : '#fa4616'};
-color: white;
-transition: transform .3s ease;
+border-radius: 30px;
+background-color: white;
+color: black;
+transition: transform .4s ease;
 :hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+`;
+const BuyButton = styled.div`
+padding: 1rem;
+font-weight: 500;
+cursor: pointer;
+border-radius: 30px;
+background-color: ${({ buy }) => buy === 'Out of Stock' ? 'black' : '#fa4616'};
+color: white;
+transition: transform .4s ease, background-color .4s ease;
+:hover {
+  transform: scale(1.05);
 }
 `;
 const ButtonWrapper = styled.div`
-width: 100%
+width: 300px;
+margin: .5rem;
+text-align: center;
+`;
+const WrapperWrapper = styled.div`
+margin-top: 1rem;
 display: flex;
 flex-direction: column;
-justify-content: center;
 align-items: center;
 `;
 const ButtonContainer = ({ buy }) => (
-  <ButtonWrapper>
-    <Button>{buy}</Button>
-    <Button>Browse Used Fleece</Button>
-  </ButtonWrapper>
+  <WrapperWrapper>
+    <ButtonWrapper>
+      <BuyButton id="buy" buy={buy}>{buy}</BuyButton>
+    </ButtonWrapper>
+    <ButtonWrapper>
+      <Button>Browse Used Fleece</Button>
+    </ButtonWrapper>
+  </WrapperWrapper>
 );
 
 export default ButtonContainer;

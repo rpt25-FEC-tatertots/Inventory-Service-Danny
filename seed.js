@@ -5,6 +5,7 @@ const mockData = require('./test/MockData.js');
 const client = new Mockaroo.Client({
   apiKey: process.env.APIKEY,
 });
+db.dropCollection();
 
 client.generate({
   count: 97,

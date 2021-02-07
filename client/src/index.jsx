@@ -1,5 +1,5 @@
 import React from 'react';
-import reactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import InventoryApp from './components/inventoryApp';
 
-reactDOM.render(<InventoryApp />, document.getElementById('inventory'));
+ReactDOM.render(<InventoryApp />, document.getElementById('inventory'));

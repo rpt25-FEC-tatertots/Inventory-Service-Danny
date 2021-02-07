@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Popup from 'reactjs-popup';
-import FitModal from './fitModal.jsx';
+import FitModal from './fitModal';
 
 const StyledDiv = styled.div`
+margin-top: 1rem;
 display: flex;
 width: 100%;
 flex-direction: column;
@@ -14,7 +15,7 @@ font-weight: bold;
 const FitGuide = ({ fit }) => (
   <StyledDiv>
     <Popup
-      trigger={<div>{`${fit} Fit | Size and Fit Style Guide`}</div>}
+      trigger={<div id="guide">{`${fit} Fit | Size & Fit Guide`}</div>}
       modal
       nested
     >

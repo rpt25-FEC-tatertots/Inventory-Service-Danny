@@ -1,10 +1,13 @@
+const axios = require('axios');
 const express = require('express');
 const db = require('../database/index.js');
+const cors = require('cors');
 
 const App = express();
 
+App.use(cors());
 App.use(express.static('./public/dist'));
-
+App.use('/:productId', express.static('./public/dist'));
 App.get('/inventory/:productID', (req, res) => {
   db.findOne(req.params.productID)
     .then((items) => {
@@ -33,7 +36,7 @@ App.get('/product/:productID', (req, res) => {
       if (!items[0]) {
         res.sendStatus(404);
       } else {
-        res.send(items);
+        res.send(items[0]);
       }
     })
     .catch((err) => {

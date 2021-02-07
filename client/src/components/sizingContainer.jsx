@@ -4,7 +4,6 @@ import Popup from 'reactjs-popup';
 
 const SizeContainer = styled.div`
 width: 100%;
-padding 1.6rem 0 0 4rem;
 display: flex;
 justify-content: center;
 align-items: center;

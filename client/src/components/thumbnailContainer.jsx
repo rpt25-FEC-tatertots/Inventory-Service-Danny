@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 const ImageContainer = styled.div`
 display: flex;
@@ -38,22 +39,27 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
     return (
-      <ImageWrap key={color.thumbnail}>
-        <Image
-          src={color.thumbnail}
-          alt="thumbnail"
-          onClick={(e) => onThumbClick(e)}
-          outOfStock={outOfStock[0] ? true : false}
-        />
-        <SvgContainer hidden={activeColor === color ? false : true} />
-      </ImageWrap>
+      <Link to={`${color.colorName}`} key={color.colorName}>
+        <ImageWrap>
+          <Image
+            src={color.thumbnail}
+            color={color.colorName}
+            alt="thumbnail"
+            onClick={(e) => onThumbClick(e.target.attributes.color.value)}
+            outOfStock={outOfStock[0] ? true : false}
+          />
+          <SvgContainer hidden={activeColor === color ? false : true} />
+        </ImageWrap>
+      </Link>
     );
   });
 
   return (
-    <ImageContainer>
-      {thumbnails}
-    </ImageContainer>
+    <Router>
+      <ImageContainer>
+        {thumbnails}
+      </ImageContainer>
+    </Router>
   );
 };
 
