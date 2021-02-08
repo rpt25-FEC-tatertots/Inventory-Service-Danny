@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Popup from 'reactjs-popup';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 const SizeContainer = styled.div`
 width: 100%;
@@ -9,6 +10,12 @@ justify-content: center;
 align-items: center;
 overflow: hidden;
 curser: pointer;
+`;
+const StyledLink = styled(Link)`
+text-decoration: none;
+&:focus, &:hover, &:visited, &:link, &:active {
+  text-decoration: none;
+}
 `;
 const Size = styled.div`
 display: flex;
@@ -52,34 +59,41 @@ color: white;
 font-weight: bold;
 outline: none;
 `;
-const SizingContainer = ({ inventory, onSizeClick, activeSize }) => {
-  const sizes = inventory.map((size) => (
+const SizingContainer = ({ color, onSizeClick, activeSize }) => {
+  const sizes = color.inventory.map((size) => (
     <Popup
       key={size.size}
       on="hover"
       trigger={(
-        <Size
-          key={size.size}
-          onClick={(e) => onSizeClick(e)}
-          active={size.size === activeSize}
-          oos={!(size.quantity > 0)}
+        <StyledLink to={`${color.colorName}?OOS=${!(size.quantity > 0)}`}
+        key={size._id}
         >
-          {size.size}
-        </Size>
+          <Size
+            key={size.size}
+            onClick={(e) => onSizeClick(e)}
+            active={size.size === activeSize}
+            oos={!(size.quantity > 0)}
+          >
+            {size.size}
+          </Size>
+        </StyledLink>
       )}
     >
       {!(size.quantity > 0) ? (
         <StyledSpan>
           Out of stock
+          {' '}
           <StyledA href="">Notify Me</StyledA>
         </StyledSpan>
       ) : null}
     </Popup>
   ));
   return (
-    <SizeContainer>
-      {sizes}
-    </SizeContainer>
+    <Router>
+      <SizeContainer>
+        {sizes}
+      </SizeContainer>
+    </Router>
   );
 };
 

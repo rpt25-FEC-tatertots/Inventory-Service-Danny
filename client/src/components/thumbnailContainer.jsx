@@ -39,18 +39,19 @@ const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => 
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
     return (
-      <Link to={`${color.colorName}`} key={color.colorName}>
-        <ImageWrap>
+      <ImageWrap key={color._id}>
+        <Link to={`${color.colorName}?OOS=${outOfStock[0] ? 'true' : 'false'}`} key={color._id}>
           <Image
             src={color.thumbnail}
             color={color.colorName}
             alt="thumbnail"
             onClick={(e) => onThumbClick(e.target.attributes.color.value)}
             outOfStock={outOfStock[0] ? true : false}
+            key={color._id}
           />
-          <SvgContainer hidden={activeColor === color ? false : true} />
-        </ImageWrap>
-      </Link>
+        </Link>
+        <SvgContainer hidden={activeColor === color ? false : true} />
+      </ImageWrap>
     );
   });
 
