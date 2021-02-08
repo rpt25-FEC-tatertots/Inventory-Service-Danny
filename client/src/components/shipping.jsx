@@ -13,7 +13,9 @@ font-size: 14px;
 font-weight: bold;
 text-decoration: none;
 color: black;
-
+:hover {
+  text-decoration: underline;
+}
 `;
 const Shipping = () => (
   <Wrapper>
