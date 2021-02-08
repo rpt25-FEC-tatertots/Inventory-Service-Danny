@@ -11,6 +11,7 @@ flex-direction: column;
 align-items: center;
 font-size: 14px;
 font-weight: bold;
+cursor: pointer;
 `;
 const FitGuide = ({ fit }) => (
   <StyledDiv>

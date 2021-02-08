@@ -7,10 +7,18 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 `;
+const StyledA = styled.a`
+margin-top: 1rem;
+font-size: 14px;
+font-weight: bold;
+text-decoration: none;
+color: black;
+
+`;
 const Shipping = () => (
   <Wrapper>
-    <span>Shipping and Exchanges</span>
-    <span>Check All Local Availability</span>
+    <StyledA href="">Shipping and Exchanges</StyledA>
+    <StyledA href="">Check All Local Availability</StyledA>
   </Wrapper>
 );
 export default Shipping;
