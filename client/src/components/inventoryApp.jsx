@@ -44,7 +44,6 @@ class InventoryApp extends React.Component {
       size.size === activeSize && size.quantity === 0))[0];
     return (
       <>
-
         <GlobalStyle />
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
@@ -54,7 +53,7 @@ class InventoryApp extends React.Component {
           activeColor={activeColor}
         />
         <SizingContainer
-          inventory={activeColor.inventory}
+          color={activeColor}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}
         />
