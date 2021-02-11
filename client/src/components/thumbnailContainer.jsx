@@ -34,13 +34,13 @@ background-position: 50%;
 background-image: url('https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1611802123941/images/vectors/check-pdp-swatch.svg')
 `;
 const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => {
-  const thumbnails = item.colors.map((color) => {
+  const thumbnails = item.colors.map((color, i) => {
     const outOfStock = color.inventory.filter((sizeObj) => (
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
     return (
       <ImageWrap key={color._id}>
-        <Link to={`${color.colorName}?OOS=${outOfStock[0] ? 'true' : 'false'}`} key={color._id}>
+        <Link to={`?OOS=${outOfStock[0] ? 'true' : 'false'}&colorIndex=${i}`} key={color._id}>
           <Image
             src={color.thumbnail}
             color={color.colorName}

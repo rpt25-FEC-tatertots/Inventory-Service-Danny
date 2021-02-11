@@ -53,6 +53,7 @@ class InventoryApp extends React.Component {
           activeColor={activeColor}
         />
         <SizingContainer
+          colorIndex={item.colors.indexOf(activeColor)}
           color={activeColor}
           onSizeClick={this.onSizeClick}
           activeSize={activeSize}

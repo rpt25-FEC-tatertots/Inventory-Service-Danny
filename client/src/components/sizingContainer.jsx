@@ -59,13 +59,13 @@ color: white;
 font-weight: bold;
 outline: none;
 `;
-const SizingContainer = ({ color, onSizeClick, activeSize }) => {
+const SizingContainer = ({ color, colorIndex, onSizeClick, activeSize }) => {
   const sizes = color.inventory.map((size) => (
     <Popup
       key={size.size}
       on="hover"
       trigger={(
-        <StyledLink to={`${color.colorName}?OOS=${!(size.quantity > 0)}`}
+        <StyledLink to={`?OOS=${!(size.quantity > 0)}&colorIndex=${colorIndex}`}
         key={size._id}
         >
           <Size
