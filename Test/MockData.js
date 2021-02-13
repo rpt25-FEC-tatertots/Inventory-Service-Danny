@@ -149,7 +149,6 @@ module.exports = [{
     {
       colorName: 'Oak Grove Green',
       colorAbbreviation: 'OAGR',
-      thumbnail: 'https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw55358486/images/hi-res/22801_OAGR.jpg?sw=800&sh=800&sfrm=png&q=95&bgcolor=f6f6f6',
       discount: null,
       hexCode: '#bc594f',
       inventory: [
@@ -180,41 +179,6 @@ module.exports = [{
         {
           size: 'XXL',
           quantity: 4,
-        },
-      ],
-    }, {
-      colorName: 'Piton Purple',
-      colorAbbreviation: 'PTPL',
-      discount: null,
-      hexCode: '#800080',
-      inventory: [
-        {
-          size: 'XXS',
-          quantity: 0,
-        },
-        {
-          size: 'XS',
-          quantity: 4,
-        },
-        {
-          size: 'S',
-          quantity: 7,
-        },
-        {
-          size: 'M',
-          quantity: 4,
-        },
-        {
-          size: 'L',
-          quantity: 1,
-        },
-        {
-          size: 'XL',
-          quantity: 2,
-        },
-        {
-          size: 'XXL',
-          quantity: 8,
         },
       ],
     },
@@ -253,7 +217,7 @@ module.exports = [{
           size: 'XXL',
           quantity: 9,
         },
-      ],
+      ]
     },
     {
       colorName: 'Hex Grey',

@@ -12,7 +12,9 @@
     "test": "jest",
     "seed": "node -r dotenv/config seed.js",
     "client-dev": "webpack -d --watch",
-    "server-dev": "nodemon -r dotenv/config ./server"
+    "server-dev": "nodemon -r dotenv/config ./server",
+    "build": "webpack --mode=development",
+    "start": "node ./server"
   },
   "repository": {
     "type": "git",

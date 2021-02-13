@@ -26,3 +26,5 @@ build/
 public/dist/inventory.js
 .env
 config.js
+Dockerfile
+docker-compose.yml
