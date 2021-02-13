@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Button = styled.div`
+const Button = window.styled.div`
 padding: .9rem;
 font-weight: 700;
 border-style: solid;
@@ -16,7 +15,7 @@ transition: transform .4s ease;
   transform: scale(1.05);
 }
 `;
-const BuyButton = styled.div`
+const BuyButton = window.styled.div`
 padding: 1rem;
 font-weight: 500;
 cursor: pointer;
@@ -28,12 +27,12 @@ transition: transform .4s ease, background-color .4s ease;
   transform: scale(1.05);
 }
 `;
-const ButtonWrapper = styled.div`
+const ButtonWrapper = window.styled.div`
 width: 300px;
 margin: .5rem;
 text-align: center;
 `;
-const WrapperWrapper = styled.div`
+const WrapperWrapper = window.styled.div`
 margin-top: 1rem;
 display: flex;
 flex-direction: column;

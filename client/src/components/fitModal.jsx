@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const ModalBase = styled.div`
+const ModalBase = window.styled.div`
 background: black;
 color: white;
 width: 100%;

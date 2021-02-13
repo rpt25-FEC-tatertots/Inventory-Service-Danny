@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const InfoWrapper = styled.div`
+const InfoWrapper = window.styled.div`
 padding: 0rem 4rem .7rem 4rem;
 display: flex;
 flex-direction: column;
@@ -10,13 +9,13 @@ align-items: flex-start;
   align-items: center;
 }
 `;
-const Div = styled.div`
+const Div = window.styled.div`
 width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
 `;
-const Name = styled.span`
+const Name = window.styled.span`
 padding: 0px 4px 0px 0px;
 font-size: 14px;
 font-weight: 600;
@@ -24,18 +23,18 @@ font-weight: 600;
   font-size: 20px;
 }
 `;
-const Price = styled.div`
+const Price = window.styled.div`
 font-size: 14px;
 font-weight: 600;
 `;
-const Abbreviation = styled.span`
+const Abbreviation = window.styled.span`
 font-size: 14px;
 font-weight: 400;
 @media (min-width: 768px) {
   font-weight: 600;
 }
 `;
-const Wrap = styled.div`
+const Wrap = window.styled.div`
 display: flex;
 width: 100%;
 flex-direction: row;

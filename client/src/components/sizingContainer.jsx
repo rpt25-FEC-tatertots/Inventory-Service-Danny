@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import Popup from 'reactjs-popup';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
-const SizeContainer = styled.div`
+const SizeContainer = window.styled.div`
 width: 100%;
 display: flex;
 justify-content: center;
@@ -11,13 +10,13 @@ align-items: center;
 overflow: hidden;
 curser: pointer;
 `;
-const StyledLink = styled(Link)`
+const StyledLink = window.styled(Link)`
 text-decoration: none;
 &:focus, &:hover, &:visited, &:link, &:active {
   text-decoration: none;
 }
 `;
-const Size = styled.div`
+const Size = window.styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
@@ -38,7 +37,7 @@ background: ${(props) => (props.active ? 'black' : 'white')};
 color: ${(props) => (props.active ? 'white' : 'black')};
 opacity: ${(props) => (props.oos ? 0.4 : 1)}
 `;
-const StyledSpan = styled.span`
+const StyledSpan = window.styled.span`
 position: absolute;
 z-index: 2;
 font-size: 12px;
@@ -54,7 +53,7 @@ overflow: visible;
 background: black;
 border-radius: 10px;
 `;
-const StyledA = styled.a`
+const StyledA = window.styled.a`
 color: white;
 font-weight: bold;
 outline: none;

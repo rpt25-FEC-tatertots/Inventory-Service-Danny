@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
-const ImageContainer = styled.div`
+const ImageContainer = window.styled.div`
 display: flex;
 flex-direction: row;
 flex-wrap: no-wrap;
@@ -10,20 +9,20 @@ justify-content: center;
 align-items: center;
 width: 100%;
 `;
-const ImageWrap = styled.div`
+const ImageWrap = window.styled.div`
 position: relative;
 width: 100px;
 height: 100px;
 margin: 1px;
 `;
-const Image = styled.img`
+const Image = window.styled.img`
 position: absolute;
 height: 100px;
 width: 100px;
 border-radius: 10px;
 opacity: ${(props) => props.outOfStock ? .3 : 1};
 `;
-const SvgContainer = styled.div`
+const SvgContainer = window.styled.div`
 position: absolute;
 height: 100%;
 width: 100%;

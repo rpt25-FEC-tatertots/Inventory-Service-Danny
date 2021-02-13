@@ -1,18 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import fetchData from '../utils/fetchData';
-import { createGlobalStyle } from 'styled-components';
 import SizingContainer from './sizingContainer';
 import InfoContainer from './infoContainer';
 import ThumbnailContainer from './thumbnailContainer';
 import ButtonContainer from './buttonContainer';
 import Shipping from './shipping';
 import FitGuide from './fitGuide';
-
-const GlobalStyle = createGlobalStyle`
-body{
-  font-family: 'Nunito', sans-serif;
-}`;
 
 class InventoryApp extends React.Component {
   constructor(props) {
@@ -44,7 +38,6 @@ class InventoryApp extends React.Component {
       size.size === activeSize && size.quantity === 0))[0];
     return (
       <>
-        <GlobalStyle />
         <InfoContainer color={activeColor} item={item} />
         <ThumbnailContainer
           item={item}

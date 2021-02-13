@@ -1,13 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 `;
-const StyledA = styled.a`
+const StyledA = window.styled.a`
 margin-top: 1rem;
 font-size: 14px;
 font-weight: bold;

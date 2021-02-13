@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import Popup from 'reactjs-popup';
 import FitModal from './fitModal';
 
-const StyledDiv = styled.div`
+const StyledDiv = window.styled.div`
 margin-top: 1rem;
 display: flex;
 width: 100%;
