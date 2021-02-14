@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Popup from 'reactjs-popup';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
-const SizeContainer = styled.div`
+const SizeContainer = window.styled.div`
+font-family: Nunito Sans;
 width: 100%;
 display: flex;
 justify-content: center;
@@ -10,7 +11,15 @@ align-items: center;
 overflow: hidden;
 curser: pointer;
 `;
-const Size = styled.div`
+const StyledLink = window.styled(Link)`
+font-family: Nunito Sans;
+text-decoration: none;
+&:focus, &:hover, &:visited, &:link, &:active {
+  text-decoration: none;
+}
+`;
+const Size = window.styled.div`
+font-family: Nunito Sans;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -31,7 +40,8 @@ background: ${(props) => (props.active ? 'black' : 'white')};
 color: ${(props) => (props.active ? 'white' : 'black')};
 opacity: ${(props) => (props.oos ? 0.4 : 1)}
 `;
-const StyledSpan = styled.span`
+const StyledSpan = window.styled.span`
+font-family: Nunito Sans;
 position: absolute;
 z-index: 2;
 font-size: 12px;
@@ -47,39 +57,47 @@ overflow: visible;
 background: black;
 border-radius: 10px;
 `;
-const StyledA = styled.a`
+const StyledA = window.styled.a`
+font-family: Nunito Sans;
 color: white;
 font-weight: bold;
 outline: none;
 `;
-const SizingContainer = ({ inventory, onSizeClick, activeSize }) => {
-  const sizes = inventory.map((size) => (
+const SizingContainer = ({ color, colorIndex, onSizeClick, activeSize }) => {
+  const sizes = color.inventory.map((size) => (
     <Popup
       key={size.size}
       on="hover"
       trigger={(
-        <Size
-          key={size.size}
-          onClick={(e) => onSizeClick(e)}
-          active={size.size === activeSize}
-          oos={!(size.quantity > 0)}
+        <StyledLink to={`?OOS=${!(size.quantity > 0)}&colorIndex=${colorIndex}`}
+        key={size._id}
         >
-          {size.size}
-        </Size>
+          <Size
+            key={size.size}
+            onClick={(e) => onSizeClick(e)}
+            active={size.size === activeSize}
+            oos={!(size.quantity > 0)}
+          >
+            {size.size}
+          </Size>
+        </StyledLink>
       )}
     >
       {!(size.quantity > 0) ? (
         <StyledSpan>
           Out of stock
+          {' '}
           <StyledA href="">Notify Me</StyledA>
         </StyledSpan>
       ) : null}
     </Popup>
   ));
   return (
-    <SizeContainer>
-      {sizes}
-    </SizeContainer>
+    <Router>
+      <SizeContainer>
+        {sizes}
+      </SizeContainer>
+    </Router>
   );
 };
 

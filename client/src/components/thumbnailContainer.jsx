@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
-const ImageContainer = styled.div`
+const ImageContainer = window.styled.div`
+font-family: Nunito Sans;
 display: flex;
 flex-direction: row;
 flex-wrap: no-wrap;
@@ -10,20 +10,23 @@ justify-content: center;
 align-items: center;
 width: 100%;
 `;
-const ImageWrap = styled.div`
+const ImageWrap = window.styled.div`
+font-family: Nunito Sans;
 position: relative;
 width: 100px;
 height: 100px;
 margin: 1px;
 `;
-const Image = styled.img`
+const Image = window.styled.img`
+font-family: Nunito Sans;
 position: absolute;
 height: 100px;
 width: 100px;
 border-radius: 10px;
 opacity: ${(props) => props.outOfStock ? .3 : 1};
 `;
-const SvgContainer = styled.div`
+const SvgContainer = window.styled.div`
+font-family: Nunito Sans;
 position: absolute;
 height: 100%;
 width: 100%;
@@ -34,23 +37,24 @@ background-position: 50%;
 background-image: url('https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1611802123941/images/vectors/check-pdp-swatch.svg')
 `;
 const thumbnailContainer = ({ onThumbClick, item, activeSize, activeColor }) => {
-  const thumbnails = item.colors.map((color) => {
+  const thumbnails = item.colors.map((color, i) => {
     const outOfStock = color.inventory.filter((sizeObj) => (
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
     return (
-      <Link to={`${color.colorName}`} key={color.colorName}>
-        <ImageWrap>
+      <ImageWrap key={color._id}>
+        <Link to={`?OOS=${outOfStock[0] ? 'true' : 'false'}&colorIndex=${i}`} key={color._id}>
           <Image
             src={color.thumbnail}
             color={color.colorName}
             alt="thumbnail"
             onClick={(e) => onThumbClick(e.target.attributes.color.value)}
             outOfStock={outOfStock[0] ? true : false}
+            key={color._id}
           />
-          <SvgContainer hidden={activeColor === color ? false : true} />
-        </ImageWrap>
-      </Link>
+        </Link>
+        <SvgContainer hidden={activeColor === color ? false : true} />
+      </ImageWrap>
     );
   });
 
