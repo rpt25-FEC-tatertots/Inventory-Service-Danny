@@ -48,7 +48,7 @@ background-image: url('https://www.patagonia.com/on/demandware.static/Sites-pata
 const thumbnailContainer = ({
   onThumbClick, item, activeSize, activeColor,
 }) => {
-  const thumbnails = item.colors.map((color) => {
+  const thumbnails = item.colors.map((color, i) => {
     const outOfStock = color.inventory.filter((sizeObj) => (
       sizeObj.size === activeSize && sizeObj.quantity === 0
     ));
