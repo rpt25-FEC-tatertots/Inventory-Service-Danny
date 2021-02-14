@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup';
 import FitModal from './fitModal';
 
 const StyledDiv = window.styled.div`
+font-family: Nunito Sans;
 margin-top: 1rem;
 display: flex;
 width: 100%;
@@ -20,7 +21,7 @@ const FitGuide = ({ fit }) => (
       nested
     >
       {(close) => (
-        <FitModal />
+        <FitModal close={close} />
       )}
     </Popup>
   </StyledDiv>

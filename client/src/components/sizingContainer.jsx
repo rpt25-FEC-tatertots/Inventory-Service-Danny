@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
 const SizeContainer = window.styled.div`
+font-family: Nunito Sans;
 width: 100%;
 display: flex;
 justify-content: center;
@@ -11,12 +12,14 @@ overflow: hidden;
 curser: pointer;
 `;
 const StyledLink = window.styled(Link)`
+font-family: Nunito Sans;
 text-decoration: none;
 &:focus, &:hover, &:visited, &:link, &:active {
   text-decoration: none;
 }
 `;
 const Size = window.styled.div`
+font-family: Nunito Sans;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -38,6 +41,7 @@ color: ${(props) => (props.active ? 'white' : 'black')};
 opacity: ${(props) => (props.oos ? 0.4 : 1)}
 `;
 const StyledSpan = window.styled.span`
+font-family: Nunito Sans;
 position: absolute;
 z-index: 2;
 font-size: 12px;
@@ -54,6 +58,7 @@ background: black;
 border-radius: 10px;
 `;
 const StyledA = window.styled.a`
+font-family: Nunito Sans;
 color: white;
 font-weight: bold;
 outline: none;

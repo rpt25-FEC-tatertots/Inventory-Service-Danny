@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
 const ImageContainer = window.styled.div`
+font-family: Nunito Sans;
 display: flex;
 flex-direction: row;
 flex-wrap: no-wrap;
@@ -10,12 +11,14 @@ align-items: center;
 width: 100%;
 `;
 const ImageWrap = window.styled.div`
+font-family: Nunito Sans;
 position: relative;
 width: 100px;
 height: 100px;
 margin: 1px;
 `;
 const Image = window.styled.img`
+font-family: Nunito Sans;
 position: absolute;
 height: 100px;
 width: 100px;
@@ -23,6 +26,7 @@ border-radius: 10px;
 opacity: ${(props) => props.outOfStock ? .3 : 1};
 `;
 const SvgContainer = window.styled.div`
+font-family: Nunito Sans;
 position: absolute;
 height: 100%;
 width: 100%;

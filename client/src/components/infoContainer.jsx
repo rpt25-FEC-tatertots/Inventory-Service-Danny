@@ -1,6 +1,7 @@
 import React from 'react';
 
 const InfoWrapper = window.styled.div`
+font-family: Nunito Sans;
 padding: 0rem 4rem .7rem 4rem;
 display: flex;
 flex-direction: column;
@@ -10,12 +11,14 @@ align-items: flex-start;
 }
 `;
 const Div = window.styled.div`
+font-family: Nunito Sans;
 width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
 `;
 const Name = window.styled.span`
+font-family: Nunito Sans;
 padding: 0px 4px 0px 0px;
 font-size: 14px;
 font-weight: 600;
@@ -24,10 +27,12 @@ font-weight: 600;
 }
 `;
 const Price = window.styled.div`
+font-family: Nunito Sans;
 font-size: 14px;
 font-weight: 600;
 `;
 const Abbreviation = window.styled.span`
+font-family: Nunito Sans;
 font-size: 14px;
 font-weight: 400;
 @media (min-width: 768px) {
@@ -35,6 +40,7 @@ font-weight: 400;
 }
 `;
 const Wrap = window.styled.div`
+font-family: Nunito Sans;
 display: flex;
 width: 100%;
 flex-direction: row;

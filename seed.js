@@ -1,6 +1,6 @@
 const Mockaroo = require('mockaroo');
 const db = require('./database/index.js');
-const mockData = require('./test/MockData.js');
+const mockData = require('./Test/MockData.js');
 
 const client = new Mockaroo.Client({
   apiKey: process.env.APIKEY,
