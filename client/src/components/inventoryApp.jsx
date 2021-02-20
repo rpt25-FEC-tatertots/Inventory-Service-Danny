@@ -32,9 +32,9 @@ class InventoryApp extends React.Component {
     };
     this.onSizeClick = this.onSizeClick.bind(this);
     this.onThumbClick = this.onThumbClick.bind(this);
-    fetchData(`/product${window.location.pathname}`,
-      `/images/thumbnailImages${window.location.pathname}`,
-      `/title${window.location.pathname}`)
+    fetchData(`http://54.241.34.87/product${window.location.pathname}`,
+      `http://54.241.34.87/images/thumbnailImages${window.location.pathname}`,
+      `http://54.241.34.87/title${window.location.pathname}`)
       .then((item) => this.setState({ item, activeColor: item.colors[0] }))
       .catch((err) => console.log(err));
   }
