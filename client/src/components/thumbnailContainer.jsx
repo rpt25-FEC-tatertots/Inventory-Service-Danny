@@ -74,6 +74,7 @@ const thumbnailContainer = ({
             outOfStock={!!outOfStock[0]}
             key={color._id}
           />
+          <SvgContainer hidden={activeColor === color ? false : true} />
         </Link>
       </ImageWrap>
     );
