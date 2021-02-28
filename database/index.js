@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
-
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost/FEC';
-
+const Mongo = process.env.MONGO_URI || 'mongodb://localhost/FEC';
 if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  mongoose.connect(Mongo, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to FEC'))
     .catch((err) => console.log(err));
 }

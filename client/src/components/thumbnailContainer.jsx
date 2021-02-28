@@ -5,10 +5,20 @@ const ImageContainer = window.styled.div`
 font-family: Nunito Sans;
 display: flex;
 flex-direction: row;
-flex-wrap: no-wrap;
+flex-wrap: nowrap;
 justify-content: center;
 align-items: center;
+flex-shrink: 0;
+@media (max-width: 767px) {
+  justify-content: flex-start;
+}
+`;
+const OuterImageContainer = window.styled.div`
 width: 100%;
+@media (max-width: 767px) {
+  margin: 0 40px;
+  overflow: scroll;
+}
 `;
 const ImageWrap = window.styled.div`
 font-family: Nunito Sans;
@@ -16,6 +26,7 @@ position: relative;
 width: 100px;
 height: 100px;
 margin: 8px;
+flex-shrink: 0;
 `;
 const Image = window.styled.img`
 font-family: Nunito Sans;
@@ -63,6 +74,7 @@ const thumbnailContainer = ({
             outOfStock={!!outOfStock[0]}
             key={color._id}
           />
+          <SvgContainer hidden={activeColor === color ? false : true} />
         </Link>
       </ImageWrap>
     );
@@ -70,9 +82,11 @@ const thumbnailContainer = ({
 
   return (
     <Router>
-      <ImageContainer>
-        {thumbnails}
-      </ImageContainer>
+      <OuterImageContainer>
+        <ImageContainer>
+          {thumbnails}
+        </ImageContainer>
+      </OuterImageContainer>
     </Router>
   );
 };

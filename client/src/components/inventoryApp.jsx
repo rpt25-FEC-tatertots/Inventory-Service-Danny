@@ -17,6 +17,26 @@ class InventoryApp extends React.Component {
           colorAbbreviation: '404',
           thumbnail: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lQb88AzJ0ybvX9_AITaucAHaHa%26pid%3DApi&f=1',
           inventory: [],
+        },{
+          colorName: 'Sorry we couldn\'t find what you are looking for',
+          colorAbbreviation: '404',
+          thumbnail: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lQb88AzJ0ybvX9_AITaucAHaHa%26pid%3DApi&f=1',
+          inventory: [],
+        },{
+          colorName: 'Sorry we couldn\'t find what you are looking for',
+          colorAbbreviation: '404',
+          thumbnail: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lQb88AzJ0ybvX9_AITaucAHaHa%26pid%3DApi&f=1',
+          inventory: [],
+        },{
+          colorName: 'Sorry we couldn\'t find what you are looking for',
+          colorAbbreviation: '404',
+          thumbnail: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lQb88AzJ0ybvX9_AITaucAHaHa%26pid%3DApi&f=1',
+          inventory: [],
+        },{
+          colorName: 'Sorry we couldn\'t find what you are looking for',
+          colorAbbreviation: '404',
+          thumbnail: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lQb88AzJ0ybvX9_AITaucAHaHa%26pid%3DApi&f=1',
+          inventory: [],
         }],
         price: 404,
         productID: 404,

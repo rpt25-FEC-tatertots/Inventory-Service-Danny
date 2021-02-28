@@ -2,9 +2,11 @@ const axios = require('axios');
 const express = require('express');
 const db = require('../database/index.js');
 const cors = require('cors');
+const compression = require('compression');
 
 const App = express();
 
+App.use(compression());
 App.use(cors());
 App.use(express.static('./public/dist'));
 App.use('/:productId', express.static('./public/dist'));
